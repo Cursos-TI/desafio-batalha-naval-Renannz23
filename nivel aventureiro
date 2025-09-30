@@ -1,0 +1,40 @@
+#include <stdio.h>
+/* Desafio 2 - Batalha Naval
+Tabuleiro 10x10 com quatro navios:
+*/
+
+int main() {
+
+    int tabuleiro[10][10] = {0}; // Inicializa o tabuleiro com 0
+    int i;
+
+    // Navio Vertical
+    for (i = 0; i < 4; i++) {
+        tabuleiro[i][2] = 3;
+    }
+
+    // Navio Horizontal
+    for (i = 0; i < 4; i++) {
+        tabuleiro[5][i] = 3;
+    }
+
+    // Navio Diagonal
+    for (i = 0; i < 4; i++) {
+        tabuleiro[2 + i][2 + i] = 3;
+    }
+
+    // Navio Diagonal 2
+    for (i = 0; i < 4; i++) {
+        tabuleiro[6 -i][2 + i] = 3;
+    }
+
+    // Imprimir o tabuleiro
+    for (int x = 0; x < 10; x++) {
+        for (int y = 0; y <10; y++) {
+            printf("%d", tabuleiro[x][y]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
