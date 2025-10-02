@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+// Desafio 3 - Batalha Naval
+
+#define N 5
+
+int main() {
+    int matriz[5][5]; // Matriz 5x5
+    int centro = 5 / 2;
+
+    // Cone
+    printf("Cone:\n");
+          for(int i = 0; i < 5; i++) {
+            for(int j = 0; j < 5; j++) {
+                if(j >= centro - i && j <= centro + i)
+                matriz[i][j] = 1;
+                else matriz[i][j] = 0;
+                printf("%d", matriz[i][j]);
+            }
+            printf("\n");
+          }
+    printf("\n");
+
+    // Cruz
+    printf("Cruz:\n");
+          for(int i = 0; i < 5; i++) {
+            for(int j = 0; j < 5; j++) {
+                if(i == centro || j == centro)
+                matriz[i][j] = 1;
+                else matriz[i][j] = 0;
+                printf("%d", matriz[i][j]);
+            }
+            printf("\n");
+          } 
+    printf("\n");
+
+    // Octaedro
+    printf("Octaedro:\n");
+          for(int i = 0; i < 5; i++) {
+            for(int j = 0; j < 5; j++) {
+                if((i + j >= centro) && (j - i <= centro) && (i - j <= centro) && (i + j <= centro * 3))
+                matriz[i][j] = 1;
+                else matriz[i][j] = 0;
+                printf("%d", matriz[i][j]);
+            }
+            printf("\n");
+          }
+
+
+    return 0;
+
+}
